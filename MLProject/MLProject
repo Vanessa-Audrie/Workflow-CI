@@ -1,0 +1,12 @@
+name: sleep-disorder-prediction
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: string, default: 'Sleep_health_and_lifestyle_dataset_preprocessing'}
+      n_estimators: {type: int, default: 300}
+      max_depth: {type: int, default: 10}
+      experiment_name: {type: string, default: 'Sleep_Disorder_CI'}
+    command: 'python modelling.py --data_path {data_path} --n_estimators {n_estimators} --max_depth {max_depth} --experiment_name {experiment_name}'
